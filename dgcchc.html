@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng dẫn đánh giá cải cách hành chính trong Công an nhân dân qua ứng dụng VNeID</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .police-badge {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .intro-section {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .steps-container {
+            margin-top: 30px;
+        }
+
+        .step {
+            background: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .step:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: -15px;
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .step h3 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            margin-left: 30px;
+        }
+
+        .step p {
+            color: #555;
+            margin-left: 30px;
+            font-size: 1.05em;
+        }
+
+        .step ul {
+            margin-left: 50px;
+            margin-top: 10px;
+        }
+
+        .step li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight strong {
+            color: #d63031;
+        }
+
+        .benefits-section {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .benefits-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            font-size: 1.05em;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .step {
+                padding: 20px;
+            }
+            
+            .step h3 {
+                margin-left: 0;
+            }
+            
+            .step p {
+                margin-left: 0;
+            }
+            
+            .step ul {
+                margin-left: 20px;
+            }
+        }
+
+        .icon {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .step-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .step-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-caption {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="police-badge">👮</div>
+            <h1>Hướng dẫn đánh giá cải cách hành chính trong Công an nhân dân qua ứng dụng VNeID</h1>
+            <p class="subtitle">Công an tỉnh Lai Châu</p>
+        </div>
+
+        <div class="main-content">
+            <div class="intro-section">
+                <h2>🎯 Mục đích và ý nghĩa</h2>
+                <p>Việc đánh giá cải cách hành chính trong Công an nhân dân qua ứng dụng VNeID sẽ giúp người dân, doanh nghiệp thuận tiện hơn trong việc phản ánh ý kiến cá nhân đối với các thủ tục hành chính của ngành Công an cung cấp và đánh giá thái độ của cán bộ chiến sĩ khi tiếp dân giải quyết thủ tục hành chính.</p>
+            </div>
+
+            <div class="steps-container">
+                <h2 style="color: #2c3e50; margin-bottom: 30px; text-align: center; font-size: 1.8em;">📋 Các bước thực hiện</h2>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3><span class="icon">🔐</span>Đăng nhập vào ứng dụng VNeID</h3>
+                    <p>Mở ứng dụng VNeID trên điện thoại thông minh và thực hiện đăng nhập bằng tài khoản đã đăng ký.</p>
+                    <div class="image-container">
+                        <img src="anh/01.jpg" alt="Đăng nhập VNeID" class="step-image">
+                        <p class="image-caption">Hình 1: Giao diện đăng nhập ứng dụng VNeID</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3><span class="icon">📂</span>Chọn nhóm dịch vụ "Thủ tục hành chính"</h3>
+                    <p>Từ giao diện chính của ứng dụng, tìm và chọn mục "Thủ tục hành chính" trong danh sách các dịch vụ.</p>
+                    <div class="image-container">
+                        <img src="anh/02.jpg" alt="Chọn dịch vụ thủ tục hành chính" class="step-image">
+                        <p class="image-caption">Hình 2: Chọn nhóm dịch vụ "Thủ tục hành chính"</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3><span class="icon">📝</span>Chọn mục "Đánh giá cải cách hành chính trong CAND"</h3>
+                    <p>Sau khi chọn nhóm dịch vụ, tìm và chọn mục "Đánh giá cải cách hành chính trong CAND". Nhập passcode khi được yêu cầu.</p>
+                    <div class="image-container">
+                        <img src="anh/03.jpg" alt="Chọn đánh giá cải cách hành chính" class="step-image">
+                        <p class="image-caption">Hình 3: Chọn mục "Đánh giá cải cách hành chính trong CAND"</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3><span class="icon">➕</span>Chọn "Tạo mới đánh giá"</h3>
+                    <p>Trong giao diện đánh giá, chọn nút "Tạo mới đánh giá" để bắt đầu quá trình đánh giá.</p>
+                    <div class="image-container">
+                        <img src="anh/04.jpg" alt="Tạo mới đánh giá" class="step-image">
+                        <p class="image-caption">Hình 4: Chọn "Tạo mới đánh giá"</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3><span class="icon">⚙️</span>Lựa chọn và điền thông tin đánh giá</h3>
+                    <p>Thực hiện các bước sau:</p>
+                    <ul>
+                        <li>Lựa chọn lĩnh vực đánh giá (lĩnh vực thuộc thẩm quyền giải quyết của Phòng nghiệp vụ cấp tỉnh hoặc Công an các xã, phường)</li>
+                        <li>Xác định đơn vị giải quyết TTHC (cấp thực hiện; cấp tỉnh/thành phố hoặc cấp xã/phường)</li>
+                        <li>Lựa chọn cơ quan giải quyết TTHC</li>
+                        <li>Nhập mã hồ sơ (ví dụ: G01.851.307-251010-00001)</li>
+                        <li>Trả lời tất cả các câu hỏi từ câu 1 đến câu 7</li>
+                    </ul>
+                    <div class="image-container">
+                        <img src="anh/05.jpg" alt="Điền thông tin đánh giá" class="step-image">
+                        <p class="image-caption">Hình 5: Điền thông tin và trả lời câu hỏi đánh giá</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3><span class="icon">📤</span>Chọn "Gửi đánh giá"</h3>
+                    <p>Sau khi hoàn thành tất cả các bước trên, kiểm tra lại thông tin và chọn "Gửi đánh giá" để hoàn tất quá trình.</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <strong>⚠️ Lưu ý quan trọng:</strong> Phải chọn tất cả nội dung có dấu "*" (màu đỏ) trong quá trình đánh giá để đảm bảo tính đầy đủ và chính xác của thông tin.
+            </div>
+
+            <div class="benefits-section">
+                <h2>🌟 Lợi ích của việc đánh giá</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>🎯 Cải thiện chất lượng dịch vụ</h3>
+                        <p>Trên cơ sở đánh giá công tác cải cách hành chính của người dân, doanh nghiệp, lực lượng Công an nhân dân sẽ kịp thời chấn chỉnh những tồn tại, hạn chế, nâng cao trách nhiệm phục vụ Nhân dân.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>💬 Tiếng nói của người dân</h3>
+                        <p>Sự tham gia đánh giá của từng cá nhân, doanh nghiệp không chỉ là tiếng nói của người dân, doanh nghiệp mà còn là động lực để lực lượng Công an nhân dân tiếp tục đổi mới.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🚀 Động lực phát triển</h3>
+                        <p>Lực lượng Công an nhân dân nói chung và lực lượng Công an tỉnh Lai Châu nói riêng sẽ kịp thời chấn chỉnh những tồn tại, hạn chế, tiếp tục đổi mới, nâng cao trách nhiệm, chất lượng phục vụ Nhân dân.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="contact-info">
+                <h3>📞 Thông tin liên hệ</h3>
+                <p><strong>Công an tỉnh Lai Châu</strong></p>
+                <p>Địa chỉ:</p>
+                <p>Email:</p>
+                <p>Điện thoại:</p>
+            </div>
+            <p style="margin-top: 20px; font-style: italic;">
+                <strong>Nguồn:</strong> Công an tỉnh Lai Châu<br>
+                <strong>Cập nhật:</strong> Tháng 10/2025
+            </p>
+        </div>
+    </div>
+</body>
+</html>
